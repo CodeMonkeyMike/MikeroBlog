@@ -1,0 +1,16 @@
+<article class="media post-highlight-{{post.text | myFilter}}" ng-repeat="post in posts">
+  <div class="media-left">
+    <div class="square"></div>
+  </div>
+  <section class="media-body">
+    <h2 class="media-heading">{{post.title}}</h2>
+    <p ng-bind-html="post.text"></p>
+    <figure ng-repeat="source in post.sources" ng-click="showSourceText()">
+      <a ng-href="{{source.href}}">{{source.href}}</a>
+      <figcaption ng-hide="false">{{source.text}}</figcaption>
+    </figure>
+    <p ng-repeat="tag in post.tags">
+      <button class="btn btn-default btn-xs">{{tag}}</button>
+    </p>
+  </section>
+</article>
